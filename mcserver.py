@@ -30,9 +30,7 @@ def search_results():
     keywords = request.form['keywords']
     now = datetime.datetime.now()
     results = mc.sentenceCount(keywords,
-        solr_filter=[mc.publish_date_query( datetime.date( 2015, 1, 1), 
-                                            datetime.date( now.year, now.month, now.day) ),
-                     'media_sets_id:1' ])
+        solr_filter=[mc.publish_date_query( datetime.date( 2017, 1, 1), now ), 'tags_id_media:9139487' ])
     return render_template("search-results.html", 
         keywords=keywords, sentenceCount=results['count'] )
 
