@@ -12,8 +12,7 @@ config = ConfigParser.ConfigParser()
 config.read(os.path.join(basedir, 'settings.config'))
 
 # set up logging
-log_file_path = os.path.join(basedir,'logs','mcserver.log')
-logging.basicConfig(filename=log_file_path,level=logging.DEBUG)
+logging.basicConfig(level=logging.DEBUG)
 logging.info("Starting the MediaCloud example Flask app!")
 
 # clean a mediacloud api client
